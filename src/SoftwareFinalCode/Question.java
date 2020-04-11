@@ -54,7 +54,7 @@ public class Question {
      * Sets a question
      * @param question the question to set
      */
-    public void setQuestion(String question) {
+    public void setQuestion(String question) throws IllegalArgumentException{
         if((question!=null)&&!(question.trim().equals(""))){
             this.question=question;
         }
