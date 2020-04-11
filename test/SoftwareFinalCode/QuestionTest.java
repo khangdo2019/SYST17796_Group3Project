@@ -12,7 +12,7 @@ import org.junit.Test;
 
 /**
  *
- * @author Admin
+ * @author Khang Do
  */
 public class QuestionTest {
     
@@ -27,122 +27,64 @@ public class QuestionTest {
      * Test of getQuestion method, of class Question.
      */
     @Test
-    public void testGetQuestion() {
-        System.out.println("getQuestion");
+    public void testQuestionGood() {
+        System.out.println("Test Getter/Setter Question Good");
         Question instance = new Question();
-        String expResult = "";
+        String expResult = "Question";
+        instance.setQuestion("Question");
         String result = instance.getQuestion();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result);        
     }
 
     /**
-     * Test of getOpt1 method, of class Question.
+     * Test of getOpt1 and setOpt1 methods, of class Question.
      */
     @Test
-    public void testGetOpt1() {
-        System.out.println("getOpt1");
+    public void testOpt1Good() {
+        System.out.println("Test Getter/Setter Opt1 Good");
         Question instance = new Question();
-        String expResult = "";
+        String expResult = "1. Sedan";
+        instance.setOpt1("1. Sedan");
         String result = instance.getOpt1();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result);        
     }
 
     /**
-     * Test of getOpt2 method, of class Question.
+     * Test of getOpt2 and setOpt2 methods, of class Question.
      */
     @Test
-    public void testGetOpt2() {
-        System.out.println("getOpt2");
+    public void testOpt2Good() {
+        System.out.println("Test Getter/Setter Opt2 Good");
         Question instance = new Question();
-        String expResult = "";
+        String expResult = "2. Van";
+        instance.setOpt2("2. Van");
         String result = instance.getOpt2();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result);        
     }
 
     /**
      * Test of getOpt3 method, of class Question.
      */
     @Test
-    public void testGetOpt3() {
-        System.out.println("getOpt3");
+    public void testOpt3Good() {
+        System.out.println("Test Getter/Setter Opt3 Good");
         Question instance = new Question();
-        String expResult = "";
+        String expResult = "3. Sport";
+        instance.setOpt3("3. Sport");
         String result = instance.getOpt3();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result);        
     }
 
     /**
-     * Test of setOpt1 method, of class Question.
+     * Test of getUserChoice and setUserChoice methods, of class Question.
      */
     @Test
-    public void testSetOpt1() {
-        System.out.println("setOpt1");
-        String opt1 = "";
+    public void testUserChoiceGood() {
+        System.out.println("Test Getter/Setter userChoice Good");
         Question instance = new Question();
-        instance.setOpt1(opt1);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setOpt2 method, of class Question.
-     */
-    @Test
-    public void testSetOpt2() {
-        System.out.println("setOpt2");
-        String opt2 = "";
-        Question instance = new Question();
-        instance.setOpt2(opt2);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setOpt3 method, of class Question.
-     */
-    @Test
-    public void testSetOpt3() {
-        System.out.println("setOpt3");
-        String opt3 = "";
-        Question instance = new Question();
-        instance.setOpt3(opt3);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getUserChoice method, of class Question.
-     */
-    @Test
-    public void testGetUserChoice() {
-        System.out.println("getUserChoice");
-        Question instance = new Question();
-        String expResult = "";
+        String expResult = "Sedan Tesla";
+        instance.setUserChoice("Sedan Tesla");
         String result = instance.getUserChoice();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setUserChoice method, of class Question.
-     */
-    @Test
-    public void testSetUserChoice() {
-        System.out.println("setUserChoice");
-        String userChoice = "";
-        Question instance = new Question();
-        instance.setUserChoice(userChoice);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
+        assertEquals(expResult, result);        
+    }    
 }

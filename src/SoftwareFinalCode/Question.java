@@ -51,6 +51,20 @@ public class Question {
     }
     
     /**
+     * Sets a question
+     * @param question the question to set
+     */
+    public void setQuestion(String question) {
+        if((question!=null)&&!(question.trim().equals(""))){
+            this.question=question;
+        }
+        else{
+            throw new IllegalArgumentException("The question can not be nothing, "
+                            +"please enter again > ");
+        }
+    }
+    
+    /**
      * An accessor method that reads the opt1 data field and return it.
      * @return opt1
      */
@@ -137,5 +151,7 @@ public class Question {
                             +"please enter again > ");
         }
     }
+
+    
     
 }
