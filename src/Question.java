@@ -1,0 +1,114 @@
+/**
+ * A class that creates one question object.
+ * @author Sunha
+ */
+
+public class Question {
+    private String question = null; // A String data field save question 
+    private String opt1, opt2, opt3 = null; // A String data field save answers 
+    private String userChoice = null; // A String data field save user choice 
+
+    /**
+     * A default constructor of this class.
+     */
+    public Question() {}
+    
+    /**
+     * A constructor to create a car brand question object.
+     * @param question
+     * @param opt1
+     * @param opt2
+     */
+    public Question(String question, String opt1, String opt2) {   
+        this.opt1 = opt1;
+        this.opt2 = opt2;
+        this.question = question;
+    }
+
+    /**
+     * A constructor to create a creating car brand question object.
+     * @param question
+     * @param opt1
+     * @param opt2
+     * @param opt3
+     */
+    public Question(String question, String opt1, String opt2, String opt3) {
+        this.opt1 = opt1;
+        this.opt2 = opt2;
+        this.opt3 = opt3;
+        this.question = question;
+    }
+
+    /**
+     * An accessor method that reads the question data field.
+     * @return question
+     */
+    public String getQuestion() {
+        return question;
+    }
+    
+    /**
+     * An accessor method that reads the opt1 data field and return it.
+     * @return opt1
+     */
+    public String getOpt1() {
+        return opt1;
+    }
+
+    /**
+     * An accessor method that reads the opt2 data field and return it.
+     * @return opt2
+     */
+    public String getOpt2() {
+        return opt2;
+    }
+
+    /**
+     * An accessor method that reads the opt3 data field and return it.
+     * @return opt3
+     */
+    public String getOpt3() {
+        return opt3;
+    }
+
+    /**
+     * A mutator method that sets the opt1 data field.
+     * @param opt1 
+     */
+    public void setOpt1(String opt1) {
+        this.opt1 = opt1;
+    }
+
+    /**
+     * A mutator method that sets the opt2 data field.
+     * @param opt2
+     */
+    public void setOpt2(String opt2) {
+        this.opt2 = opt2;
+    }
+
+    /**
+     * A mutator method that sets the opt3 data field.
+     * @param opt3
+     */
+    public void setOpt3(String opt3) {
+        this.opt3 = opt3;
+    }
+
+    /**
+     * An accessor method that reads the userChoice data field and return it.
+     * @return userChoice
+     */
+    public String getUserChoice() {
+        return userChoice;
+    }
+
+    /**
+     * A mutator method that sets the userChoice data field.
+     * @param userChoice 
+     */
+    public void setUserChoice(String userChoice) {
+        this.userChoice = userChoice;
+    }
+    
+}
