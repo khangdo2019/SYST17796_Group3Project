@@ -20,11 +20,12 @@ public class QuizHandler {
      * @param van
      * @param sport
      * @return carType;
+     * @throws IllegalArgumentException when sedan, van, or sport is negative
      */
     public Car returnCarType(int sedan, int van, int sport)
             throws IllegalArgumentException {
         Car carType = null;
-        if (sedan >= 0 && van >= 0 && sport >= 0) {            
+        if (sedan >= 0 && van >= 0 && sport >= 0) {
             if (sedan > van && sedan > sport) {
                 carType = Car.Sedan;
             } else if (van > sedan && van > sport) {
@@ -32,8 +33,10 @@ public class QuizHandler {
             } else if (sport > sedan && sport > van) {
                 carType = Car.Sport;
             }
-        } else throw new IllegalArgumentException("Error: Car point should be "
-                + "positive");
+        } else {
+            throw new IllegalArgumentException("Error: Car point should be "
+                    + "positive");
+        }
         return carType;
     }
 
@@ -43,14 +46,17 @@ public class QuizHandler {
      * @param opt1
      * @param opt2
      * @return carBrandBoolean
+     * @throws IllegalArgumentException when opt1 or opt2 is negative
      */
-    public boolean askCarBrandCommon(int opt1, int opt2) throws 
-            IllegalArgumentException{
+    public boolean askCarBrandCommon(int opt1, int opt2) throws
+            IllegalArgumentException {
         Boolean carBrandBoolean = true;
-        if(opt1 >= 0 && opt2 >= 0){
+        if (opt1 >= 0 && opt2 >= 0) {
             carBrandBoolean = (opt1 > opt2);
-        } else throw new IllegalArgumentException("Error: Option point should"
-                + "be positive!");
+        } else {
+            throw new IllegalArgumentException("Error: Option point should"
+                    + "be positive!");
+        }
         return carBrandBoolean;
     }
 
@@ -61,21 +67,24 @@ public class QuizHandler {
      * @param carType
      * @param carBrandBoolean
      * @return carBrand
+     * @throws IllegalArgumentException when carType is null
      */
     public String returnCarBrand(Car carType, boolean carBrandBoolean) throws
-            IllegalArgumentException{
+            IllegalArgumentException {
         String carBrand = null;
         boolean b = carBrandBoolean;
-        if(carType != null){
-        if (carType == Car.Sedan) {
-            carBrand = (b) ? Car.Sedan.getBrand1() : Car.Sedan.getBrand2();
-        } else if (carType == Car.Van) {
-            carBrand = (b) ? Car.Van.getBrand1() : Car.Van.getBrand2();
-        } else if (carType == Car.Sport) {
-            carBrand = (b) ? Car.Sport.getBrand1() : Car.Sport.getBrand2();
+        if (carType != null) {
+            if (carType == Car.Sedan) {
+                carBrand = (b) ? Car.Sedan.getBrand1() : Car.Sedan.getBrand2();
+            } else if (carType == Car.Van) {
+                carBrand = (b) ? Car.Van.getBrand1() : Car.Van.getBrand2();
+            } else if (carType == Car.Sport) {
+                carBrand = (b) ? Car.Sport.getBrand1() : Car.Sport.getBrand2();
+            }
+        } else {
+            throw new IllegalArgumentException("Error: CarType should not"
+                    + "be null!");
         }
-        } else throw new IllegalArgumentException("Error: CarType should not"
-                + "be null!");
         return carBrand;
     }
 
