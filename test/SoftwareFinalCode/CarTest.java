@@ -10,7 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * A class to test the methods of Car class
  * @author Khang Do
  */
 public class CarTest {

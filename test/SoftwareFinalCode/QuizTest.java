@@ -11,8 +11,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author Admin
+ * A class to test the methods of Quiz class
+ * @author Khang Do
  */
 public class QuizTest {
     
