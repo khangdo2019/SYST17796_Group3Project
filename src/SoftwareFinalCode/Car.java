@@ -76,7 +76,7 @@ public enum Car {
      * An accessor method that reads the first data field and return it.
      * @return brand1
      */
-    public String getBrand1() {
+    public String getBrand1() throws NullPointerException{
         return brand1;
     }
 
@@ -84,7 +84,7 @@ public enum Car {
      * An accessor method that reads the second data field and return it.
      * @return brand2
      */
-    public String getBrand2() {
+    public String getBrand2() throws NullPointerException{
         return brand2;
     }
     

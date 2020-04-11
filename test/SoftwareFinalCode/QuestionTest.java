@@ -49,8 +49,7 @@ public class QuestionTest {
         Question instance = new Question();
         String expResult = "";
         instance.setQuestion("");
-        String result = instance.getQuestion();
-        assertEquals(expResult, result);        
+        String result = instance.getQuestion();          
     }
     
     /**
@@ -94,8 +93,7 @@ public class QuestionTest {
         Question instance = new Question();
         String expResult = "";
         instance.setOpt1("");
-        String result = instance.getOpt1();
-        assertEquals(expResult, result);        
+        String result = instance.getOpt1();                
     }
     
     /**
@@ -139,8 +137,7 @@ public class QuestionTest {
         Question instance = new Question();
         String expResult = "";
         instance.setOpt2("");
-        String result = instance.getOpt2();
-        assertEquals(expResult, result);        
+        String result = instance.getOpt2();        
     }
     
     /**
@@ -184,8 +181,7 @@ public class QuestionTest {
         Question instance = new Question();
         String expResult = "";
         instance.setOpt3("");
-        String result = instance.getOpt3();
-        assertEquals(expResult, result);        
+        String result = instance.getOpt3();        
     }
     
     /**
@@ -229,8 +225,7 @@ public class QuestionTest {
         Question instance = new Question();
         String expResult = "";
         instance.setUserChoice("");
-        String result = instance.getUserChoice();
-        assertEquals(expResult, result);        
+        String result = instance.getUserChoice();        
     }
     
     /**

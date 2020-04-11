@@ -24,16 +24,21 @@ public class Quiz {
      * A method that add a question object of car type to array list commonQs.
      * @param q 
      */
-    public void addCarTypeQ(Question q){ 
-        this.commonQs.add(q);
+    public void addCarTypeQ(Question q) throws IllegalArgumentException{ 
+        if(q != null)
+            this.commonQs.add(q);
+        else throw new IllegalArgumentException("Error: Question should not be null.");
     } 
     
     /**
      * A method that add a question object of car brands to array list carBrandQs.
      * @param q 
      */
-    public void addCarBrandQ(Question q){
-        this.carBrandQs.add(q);        
+    public void addCarBrandQ(Question q) throws IllegalArgumentException{
+        if(q != null)
+            this.carBrandQs.add(q);        
+        else throw new IllegalArgumentException("Error: Question should not be null.");
+        
     } 
     
     /**
