@@ -33,25 +33,30 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         // add common 6 question
-        quiz.addCarTypeQ(new Question("What type of vehicle do you most commonly drive?",
-                "1.Sedan", "2.Van", "3.Sport"));
-        quiz.addCarTypeQ(new Question("Are you looking for a vehicle that uses electricity, petrol or diesel?",
+        quiz.addCarTypeQ(new Question("What type of vehicle do you most "
+                + "commonly drive?", "1.Sedan", "2.Van", "3.Sport"));
+        quiz.addCarTypeQ(new Question("Are you looking for a vehicle that uses "
+                + "electricity, petrol or diesel?",
                 "1.Electricity", "2.Petrol", "3.Diesel"));
-        quiz.addCarTypeQ(new Question("How many cars are you most likely to own?",
-                "1.1-2", "2.2-4", "3.4 and up"));
+        quiz.addCarTypeQ(new Question("How many cars are you most likely to "
+                + "own?", "1.1-2", "2.2-4", "3.4 and up"));
         quiz.addCarTypeQ(new Question("How much would you spend on your car?",
                 "1.20k-35", "2.35-65", "3.65 and higher"));
         quiz.addCarTypeQ(new Question("What type of vehicle is your dream car?",
                 "1.Sedan", "2.Van", "3.Sports"));
-        quiz.addCarTypeQ(new Question("In a car do you pay more attention to the electronics, luxury?",
-                "1.Electronics and gimmicks", "2.Looks of the car are irrelevant", "3.Luxury"));
+        quiz.addCarTypeQ(new Question("In a car do you pay more attention to "
+                + "the electronics, luxury?", "1.Electronics and gimmicks", 
+                "2.Looks of the car are irrelevant", "3.Luxury"));
 
-        System.out.println("Welcome to the Carology Test where you can find your dream car.");
-        System.out.println("Please choose cho number 1,2,3 stands for each answer.");
+        System.out.println("Welcome to the Carology Test where you can "
+                + "find your dream car.");
+        System.out.println("Please choose cho number 1,2,3 stands for "
+                + "each answer.");
         int num = quiz.getCommonQs().size(); //Check number of common question
         // for user to see the common questions
         for (int i = 0; i < quiz.getCommonQs().size(); i++) {
-            System.out.println(i + 1 + ". " + quiz.getCommonQs().get(i).getQuestion()
+            System.out.println(i + 1 + ". " + quiz.getCommonQs().get(i).
+                    getQuestion()
                     + "\n"
                     + quiz.getCommonQs().get(i).getOpt1() + "\t"
                     + quiz.getCommonQs().get(i).getOpt2() + "\t"
@@ -81,39 +86,66 @@ public class Main {
                 System.out.println(e.getMessage());
                 qNum = sc.nextInt();
             }
+            
+            //Test there is a max number among sedan, van, and sport.
+            boolean isMax = false;
+            if (sedan > van){
+                if (sedan > sport)
+                    isMax = true;                
+            } else if (van > sport){
+                if (van > sedan)
+                    isMax = true;                
+            } else if (sport > sedan){
+                if (sport > van)
+                    isMax = true;
+            }
+                
             //If the counts of sedan, van, or sport are equal
-            if (num == i + 1) {
+            if (num == i + 1 && !isMax) {                
                 if (sport == sedan && sedan == van) {
-                    quiz.addCarTypeQ(new Question("What is your most important value when you buy car?",
-                            "1.A Efficient fuel economy", "2.A large indoor space",
+                    quiz.addCarTypeQ(new Question("What is your most "
+                            + "important value when you buy car?",
+                            "1.A Efficient fuel economy", "2.A large indoor "
+                                    + "space",
                             "3.An appearance"));
-                    System.out.println("Senda " + sedan + "Van " + van + "Sport " + sport);
+                    System.out.println("Senda " + sedan + "Van " + van + 
+                            "Sport " + sport);
                 } else if (sedan == van) {
-                    quiz.addCarTypeQ(new Question("What is your most important value when you buy car?",
-                            "1.A Efficient fuel economy", "2.A large indoor space",
+                    quiz.addCarTypeQ(new Question("What is your most important "
+                            + "value when you buy car?",
+                            "1.A Efficient fuel economy", "2.A large indoor "
+                                    + "space",
                             ""));
-                    System.out.println("Senda " + sedan + "Van " + van + "Sport " + sport);
+                    System.out.println("Senda " + sedan + "Van " + van + 
+                            "Sport " + sport);
                 } else if (sedan == sport) {
-                    quiz.addCarTypeQ(new Question("What is your most important value when you buy car?",
+                    quiz.addCarTypeQ(new Question("What is your most important "
+                            + "value when you buy car?",
                             "1.A Efficient fuel economy", "",
                             "3.An appearance"));
-                    System.out.println("Senda " + sedan + "Van " + van + "Sport " + sport);
+                    System.out.println("Senda " + sedan + "Van " + van + 
+                            "Sport " + sport);
                 } else if (van == sport) {
-                    quiz.addCarTypeQ(new Question("What is your most important value when you buy car?",
+                    quiz.addCarTypeQ(new Question("What is your most important "
+                            + "value when you buy car?",
                             "", "2.A large indoor space",
                             "3.An appearance"));
-                    System.out.println("Senda " + sedan + "Van " + van + "Sport " + sport);
+                    System.out.println("Senda " + sedan + "Van " + van + 
+                            "Sport " + sport);
                 }
             }
             System.out.println("");
         }
 
         // add car brand question
-        quiz.addCarBrandQ(new Question("Do you enjoy going off roading?", "1.Yes ", "2.No"));
-        quiz.addCarBrandQ(new Question("If your on a road trip, and your on open road, "
+        quiz.addCarBrandQ(new Question("Do you enjoy going off roading?", 
+                "1.Yes ", "2.No"));
+        quiz.addCarBrandQ(new Question("If your on a road trip, and your on "
+                + "open road, "
                 + " are you more likely drive fast or go on the speed limit?",
                 "1.Drive fast", "2.Speed limit"));
-        quiz.addCarBrandQ(new Question("Do you care about the vehicle brand?", "1.No", "2.Yes"));
+        quiz.addCarBrandQ(new Question("Do you care about the vehicle brand?",
+                "1.No", "2.Yes"));
 
         recommendCarType = qh.returnCarType(sedan, van, sport);
 
@@ -129,11 +161,13 @@ public class Main {
                 switch (qNum) {
                     case 1:
                         opt1++;
-                        quiz.getCarBrandQs().get(i).setUserChoice(recommendCarType.getBrand1());
+                        quiz.getCarBrandQs().get(i).setUserChoice
+        (recommendCarType.getBrand1());
                         break;
                     case 2:
                         opt2++;
-                        quiz.getCarBrandQs().get(i).setUserChoice(recommendCarType.getBrand2());
+                        quiz.getCarBrandQs().get(i).setUserChoice
+        (recommendCarType.getBrand2());
                         break;
                 }
 
@@ -146,9 +180,11 @@ public class Main {
 
         carBrandBoolean = qh.askCarBrandCommon(opt1, opt2);
 
-        recommendedCarBrand = qh.returnCarBrand(recommendCarType, carBrandBoolean);
+        recommendedCarBrand = qh.returnCarBrand(recommendCarType, 
+                carBrandBoolean);
 
-        System.out.println("We recommend you " + recommendCarType + " " + recommendedCarBrand);
+        System.out.println("We recommend you " + recommendCarType + " " + 
+                recommendedCarBrand);
         System.out.println("");
 
         finalQuiz.addAll(quiz.getCommonQs());
@@ -185,7 +221,8 @@ public class Main {
                 num = sc.nextInt();
                 if (num != 1 && num != 2) {
                     throw new IllegalArgumentException("Number need to be input"
-                            + "1 or 2 to choose first option or second option > ");
+                            + "1 or 2 to choose first option or second "
+                            + "option > ");
                 }
                 vaild = true;
             } catch (InputMismatchException e) {
