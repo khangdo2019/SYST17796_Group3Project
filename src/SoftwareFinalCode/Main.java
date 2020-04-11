@@ -8,6 +8,7 @@ import java.util.Scanner;
  *
  * @author Sunha
  * @modifier HsiaoHsienKuo
+ * @modifier Khang Do
  */
 public class Main {
 
